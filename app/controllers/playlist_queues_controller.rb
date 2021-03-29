@@ -1,0 +1,2 @@
+class PlaylistQueuesController < ApplicationController
+end
