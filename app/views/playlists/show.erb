@@ -1,0 +1,26 @@
+<h1><%= @playlist.name %></h1>
+
+<ol>
+<% @playlist.playlist_queues.map do |pq| %>
+    <li><b> Artist Name: </b> <%= pq.artist.name %> </li>
+<% end %>
+</ol>
+
+<table>
+  <tr>
+    <th><%= link_to "Song", sort: "name" %></th>
+    <th><%= link_to "Album", sort: "album" %></th>               
+    <th><%= link_to "Artist", sort: "artist" %></th>                      
+    <th><%= link_to "Length", sort: "lengtg" %></th>
+    <th><%= link_to "Avg. Rating", sort: "avg_rating" %></th>
+  </tr>
+ <% @playlist.playlist_queues.map do |pq| %>
+  <tr>
+    <td><%= pq.song.name%></td>
+    <td><%= pq.album.name%></td>
+    <td><%= pq.artist.name%></td>        
+    <td><%= "#{pq.song.length.to_f/60} min" %></td><td>     
+    <td><%= pq.artist.rating %></td>      
+  </tr>
+  <% end %>
+ </table>
