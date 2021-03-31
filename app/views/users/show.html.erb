@@ -1,0 +1,22 @@
+<h1> Hello, <%= @user.username %> </h1> 
+<hr>
+#add image
+             <h3> My Playlist: </h3>
+        <% @user.playlists.map do |playlist| %>
+        
+             <p> <%= playlist.name %> </p>
+                      <% end %>
+    
+
+
+<p>Update your playlist below: </p>
+#create playlist button
+#button that takes them to playlist/new
+<%= button_to "Edit Playlist", '/playlist/new', method: :update %>
+#button that takes user to edit profile page
+<p> Edit profile below: </p> <br>
+<%= button_to "Edit Profile", '/users/edit' %>
+#button that logs user out
+<p> Log Out: </p> <br>
+<%= button_to "log out", '/logout', method: :delete %>
+#add discover popular playlist link/button
