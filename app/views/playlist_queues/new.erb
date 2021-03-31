@@ -1,0 +1,28 @@
+<br>
+<h1>Add A Song!</h1>
+
+<%= form_for @playlist_queue do |f| %>
+
+<div class="field">
+        <%= f.label :playlist_id %><br/>
+        <%= f.collection_select :playlist_id, Playlist.order(:name), :id, :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :artist_id %><br/>
+        <%= f.collection_select :artist_id, Artist.order(:name), :id, :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :album_id %><br/>
+        <%= f.collection_select :album_id, Album.order(:name), :id, :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :song_id %><br/>
+        <%= f.collection_select :song_id, Song.order(:name), :id, :name %>
+    </div><br/>
+
+    <%= f.submit %>
+
+<% end %>

@@ -57,4 +57,3 @@ PlaylistQueue.create(playlist_id: Playlist.first.id, artist_id: Artist.second.id
 
 
 
-

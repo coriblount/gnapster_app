@@ -13,7 +13,7 @@ class PlaylistQueuesController < ApplicationController
     end
 
     def create
-        @playlist_queue = PlaylistQueue.new(playlist_params)
+        @playlist_queue = PlaylistQueue.new(playlist_queues_params)
         @playlist_queue.save
         redirect_to @playlist_queue.playlist
     end
@@ -27,7 +27,9 @@ class PlaylistQueuesController < ApplicationController
     end
 
     def destroy
-
+        @playlist_queue = PlaylistQueue.find(params[:id])
+        @playlist_queue.delete
+        redirect_to @playlist_queue.playlist
     end
 
     private
