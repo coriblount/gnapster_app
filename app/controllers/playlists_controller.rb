@@ -17,7 +17,7 @@ class PlaylistsController < ApplicationController
     def create
         @playlist = Playlist.new(playlist_params)
         @playlist.save
-        redirect_to @playlist
+        redirect_to new_playlist_queue_path(@playlist_queue)
     end
 
     def update
@@ -33,6 +33,7 @@ class PlaylistsController < ApplicationController
     def destroy
         @playlist = Playlist.find(params[:id])
         @playlist.destroy
+        redirect_to @playlist.user
     end
 
     private
@@ -41,7 +42,6 @@ class PlaylistsController < ApplicationController
         params.require(:playlist).permit(
             :name,
             :user_id,
-            playlist_queues_attributes: [ :playlist_id, :artist_id, :album_id, :song_id ]
         )
     end
 

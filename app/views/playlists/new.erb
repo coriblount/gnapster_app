@@ -1,15 +1,12 @@
+<% require 'bcrypt' %>
+
 <h1>Create New Playlist</h1>
 
 <%= form_with model: @playlist do |f| %>
-
+<%= f.hidden_field :user_id, value: session[:id] %>
     <div class="field">
         <%= f.label "New Playlist Name:" %><br/>
         <%= f.text_field :name %>
-    </div><br/>
-
-    <div class="field">
-        <%= f.label "Playlist Owner:" %><br/>
-        <%= f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
     </div><br/>
 
     <%= f.submit %>

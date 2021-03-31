@@ -1,5 +1,8 @@
 class PlaylistQueuesController < ApplicationController
 
+    before_action :current_user, only: [:show]
+    before_action :not_logged_in, only: [:show]
+
     def index
         @playlist_queues = PlaylistQueue.all
     end
@@ -15,7 +18,7 @@ class PlaylistQueuesController < ApplicationController
     def create
         @playlist_queue = PlaylistQueue.new(playlist_queues_params)
         @playlist_queue.save
-        redirect_to @playlist_queue.playlist
+        redirect_to @playlist_queue.playlist.user
     end
 
     def update
