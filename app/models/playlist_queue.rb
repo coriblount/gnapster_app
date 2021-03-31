@@ -10,4 +10,5 @@ class PlaylistQueue < ApplicationRecord
     #     self.playlist.update(playlist)
     # end
 
+
 end
