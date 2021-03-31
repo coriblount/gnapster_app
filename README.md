@@ -8,7 +8,7 @@
 
 <!-- * User can create new profile -->
 
-* CRUD username/password/email/profile picture
+<!-- * CRUD username/password -->
 
 <!-- * User can Add Songs to their Playlist -->
 
@@ -26,6 +26,7 @@
 
 * Add Faker Gem Data
 
+* Password confirmation for editing profile
 
 ### Create New PLaylist & Add Songs
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :current_user, only: [:show]
+    before_action :current_user, only: [:show, :edit, :update]
     before_action :not_logged_in, only: [:show]
 
     def index
@@ -27,13 +27,32 @@ class UsersController < ApplicationController
     def show
         @user = User.find(session[:id])
         @playlists = Playlist.all
+    end
+      
+    def edit
+        @user = current_user
+      end
 
+      def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+          redirect_to @user
+          puts "Your profile was succesfully updated!"
+        else
+          render 'edit'
+        end
+      end
+
+      def destroy
+        @user = current_user
+        @user.delete
+        redirect_to '/login'
+      end
 
     private
 
     def user_params
-
-        params.require(:user).permit(:username, :password_digest)
+     params.require(:user).permit(:username, :password, :image, :image_cache)
     end
 
 
