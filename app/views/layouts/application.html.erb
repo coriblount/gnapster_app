@@ -13,6 +13,9 @@
  
 
   <% if @current_user %> 
+  <br>
+ <br>
+ <div class="menu">
   Signed in as <%= current_user.name %> 
 <% else %>
 <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Logout', '/logout' %>

@@ -1,24 +1,77 @@
-<h1> Hello, <%= @user.username %> </h1> 
-<hr>
+
+ <head>
+ <style>
+ h1 {
+   border-bottom: 6px solid SlateBlue;
+   background-color: lightgrey;
+ }
+ h3 {
+   border-left: 6px solid SlateBlue;
+   background-color: lightgrey;
+ }
+ table {
+   width:100%;
+ }
+ table, th, td {
+
+   border-collapse: collapse;
+ }
+ th, td {
+   padding: 15px;
+   text-align: left;
+ }
+ #t01 tr:nth-child(even) {
+   background-color: #eee;
+ }
+ #t01 tr:nth-child(odd) {
+  background-color: #fff;
+ }
+ #t01 th {
+   background-color: rgba(98, 120, 255, 0.75);
+   color: white;
+ }
+ </style>
+ </head>
+
+ <h1><%= "Hello, #{@user.username}!" %></h1> 
+ <hr>
+
+ <h3> My Playlists: </h3>
 
 
-             <h3> My Playlist: </h3>
-        <% @user.playlists.map do |playlist| %>
-        
-             <p> <%= playlist.name %> </p>
-                      <% end %>
-    
-<hr>
+ <table id="t01">
+ <tr>
+   <th>Name</th>
+   <th>Tracks</th>               
+   <th>Listens</th>                      
+   <th>Rating</th>
+   <th colspan="2"></th>
+ </tr>
+<% @user.playlists.map do |playlist| %>
+ <tr>
+   <td><b><%= link_to playlist.name, playlist %></b></td>
+   <td><%= 1 %></td>
+   <td><%= 100 %></td>        
+   <td><%= "⭐⭐⭐⭐" %></td>
+   <td><%=button_to "🎵 Add Song", '/playlist_queues/new', method: 'get' %></td>
+   <td><%=button_to "❌ Delete Playlist", playlist, method: 'delete' %></td>      
+ </tr>
+ <% end %>
+</table>
+<br>
+<br>
 
-<p>Create a new playlist </p> <br> <br>
-<%= button_to "Create a new playlist", '/playlists/new', method: 'get' %>
+<h3>User Shortcuts:</h3>
+<p><b>Create a new playlist below:</b></p>
+<%= button_to "🎧 Create New Playlist", '/playlists/new', method: 'get' %>
 
+<p><b>Update your playlist below:</b></p>
+<%= button_to "🖊 Edit Playlist", '/playlists/new', method: 'get' %>
 
-<p> Edit profile below: </p> <br>
-<%= button_to "Edit", '/users/:id/edit', method: 'get' %> <br>
+<p><b>Edit profile below:</b></p>
+<%= button_to "🤓 Edit Profile", '/users/:id/edit', method: 'get' %>
 
-
-<p> Log Out: </p> <br> 
-<%= button_to "Log out", '/logout', method: 'delete' %><br>
+<p><b>Log Out:</b></p>
+ <%= button_to "👋 Logout", '/logout', method: :delete %>
 
 
