@@ -7,4 +7,8 @@ class Playlist < ApplicationRecord
    #    self.playlist_queue = PlaylistQueue.find_or_create_by()
    # end
 
+   def playlist_track_count
+      self.playlist_queues.map {|pq| pq.song}.count
+   end
+
 end

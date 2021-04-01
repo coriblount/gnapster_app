@@ -1,4 +1,4 @@
-<h1>Sign Up!</h1>
+<h1 class="text-center">Sign Up With Gnapster!</h1>
 
 <% if !!flash[:errors] %>
  <% flash[:errors].each do |error| %>
@@ -6,14 +6,15 @@
   <% end %>
   <% end %>
 
+
+<p class="text-center">
 <%= form_with model: @user do |f| %> <br>
   <%= f.label :username %><br>
   <%= f.text_field :username %> <br>
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
-  <%= f.label :confirm_password %><br>
-  <%= f.password_field :confirm_password %><br>
   <%= f.submit "Login" %> <br>
+  </p>
 
   <% end %>
 
