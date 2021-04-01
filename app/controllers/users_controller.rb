@@ -36,10 +36,11 @@ class UsersController < ApplicationController
       def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-          redirect_to @user
-          puts "Your profile was succesfully updated!"
+            puts "Your profile was succesfully updated!"
+          redirect_to @user 
         else
-          render 'edit'
+        flash.now[:alert] = "Something went wrong. Please try again"
+          render :edit
         end
       end
 
@@ -54,7 +55,5 @@ class UsersController < ApplicationController
     def user_params
      params.require(:user).permit(:username, :password, :image)
     end
-
-
 
 end

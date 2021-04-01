@@ -22,7 +22,7 @@
 
 * User can see most listened to songs - Analytics
 
-* User can delete playlist
+<!-- * User can delete playlist -->
 
 * Add Faker Gem Data
 

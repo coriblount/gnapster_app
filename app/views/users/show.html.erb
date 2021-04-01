@@ -37,7 +37,8 @@
 
  <hr>
 
- <%= @image.image_url %>
+ <%= image_for @user %>
+
  <hr>
 
 
@@ -72,6 +73,9 @@
 
 <p><b>Update your playlist below:</b></p>
 <%= button_to "🖊 Edit Playlist", '/playlists/new', method: 'get' %>
+
+<p><b>View all playlist:</b></p>
+<%= button_to " View All Playlist", '/playlists/index', method: 'get' %>
 
 <p><b>Edit profile below:</b></p>
 <%= button_to "🤓 Edit Profile", '/users/:id/edit', method: 'get' %>
