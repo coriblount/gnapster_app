@@ -16,15 +16,16 @@
       <%= f.submit "Save changes", class: "btn btn-primary" %><br>
     <% end %>
 
-    <%= form_for @user, :html => {:multipart => true} do |f| %>
+        <%= form_for @user, :html => {:multipart => true} do |f| %>
         <p>
-          <%= f.label :upload_profile_picture %><br />
-        </p>
-        <p>
-          <%= f.file_field :image %>
+        <%= f.label :upload_profile_picture %><br />
+         </p>
+          <p>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
         </p>
         <p><%= f.submit %></p>
-      <% end %>
+         <% end %>
 
 
     <p><strong> Delete Profile: </strong> </p>

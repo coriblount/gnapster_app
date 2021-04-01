@@ -18,17 +18,20 @@
 <div class="menu">
   Signed in as <%= current_user.name %> 
 <% else %>
-<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Logout', '/logout' %>
+<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'User Dashboard', '/users/:id' %>| <%= link_to 'Logout', '/logout' %>
 <% end %>
 </div>
  
-<footer>
-<% unless root_path? %>
-<%= link_to "Back", :back, :class => "navbar-brand" %>
-<% end %>
 
-</footer>
     <%= yield %>
   </body>
- 
+  <br>
+  <br>
+  <br>
+  <footer>
+  <% unless root_path? %>
+  <%= link_to "Back", :back, :class => "navbar-brand" %>
+  <% end %>
+  
+  </footer>
 </html>

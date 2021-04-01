@@ -35,8 +35,8 @@ class UsersController < ApplicationController
       def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-            puts "Your profile was succesfully updated!"
           redirect_to @user 
+          puts "Your profile was succesfully updated!"
         else
         flash.now[:alert] = "Something went wrong. Please try again"
           render :edit
