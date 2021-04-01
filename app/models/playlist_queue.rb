@@ -9,6 +9,8 @@ class PlaylistQueue < ApplicationRecord
     #     self.playlist = Playlist.find_or_create_by(name: playlist[:name])
     #     self.playlist.update(playlist)
     # end
-
+    def current_user_playlists
+        self.find_by(user_id: session[:id])
+    end
 
 end

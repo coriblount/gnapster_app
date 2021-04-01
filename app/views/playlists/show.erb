@@ -29,6 +29,7 @@ th, td {
 <h3><%= @playlist.name %></h3>
 
 <h4><%= link_to "Add Song", '/playlist_queues/new' %></h4>
+<%= button_to "🖊 Edit Playlist", edit_playlist_path(@playlist), method: 'get' %>
 <br>
 <br>
 <table id="t01">

@@ -13,6 +13,7 @@ class PlaylistQueuesController < ApplicationController
 
     def new
         @playlist_queue = PlaylistQueue.new
+        @user = @current_user
     end
 
     def create

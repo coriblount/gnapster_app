@@ -7,30 +7,6 @@
         <%= f.text_field :name %>
     </div><br/>
 
-    <div class="field">
-        <%= f.label "Playlist Owner:" %><br/>
-        <%= f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
-    </div><br/>
-
-        <%= f.fields_for :playlist_queues do |inner_form| %>
-
-            <div class="field">
-                <%= inner_form.label :artist_id %><br/>
-                <%= inner_form.collection_select :artist_id, Artist.order(:name), :id, :name, include_blank: true %>
-            </div><br/>
-
-            <div class="field">
-                <%= inner_form.label :album_id %><br/>
-                <%= inner_form.grouped_collection_select :album_id, Artist.order(:name), :albums, :name, :id, :name, include_blank: true %>
-            </div><br/>
-
-            <div class="field">
-                <%= inner_form.label :song_id %><br/>
-                <%= inner_form.collection_select :song_id, Song.order(:name), :id, :name, include_blank: true %>
-            </div><br/>
-
-        <% end %>
-
     <%= f.submit %>
 
 <% end %>

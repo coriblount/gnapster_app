@@ -1,5 +1,8 @@
 <head>
 <style>
+body {
+  background-image: url("app/assets/images/gnappy.jpg");
+}
 h1 {
   border-bottom: 6px solid SlateBlue;
   background-color: lightgrey;
@@ -48,7 +51,7 @@ th, td {
  <% @user.playlists.map do |playlist| %>
   <tr>
     <td><b><%= link_to playlist.name, playlist %></b></td>
-    <td><%= 1 %></td>
+    <td><%= playlist.playlist_track_count %></td>
     <td><%= 100 %></td>        
     <td><%= "⭐⭐⭐⭐" %></td>
     <td><%=button_to "🎵 Add Song", '/playlist_queues/new', method: 'get' %></td>
@@ -62,12 +65,11 @@ th, td {
 <h3>User Shortcuts:</h3>
 <p><b>Create a new playlist below:</b></p>
 <%= button_to "🎧 Create New Playlist", '/playlists/new', method: 'get' %>
-    
-<p><b>Update your playlist below:</b></p>
-<%= button_to "🖊 Edit Playlist", '/playlists/new', method: 'get' %>
 
 <p><b>Edit profile below:</b></p>
 <%= button_to "🤓 Edit Profile", '/users/:id/edit', method: 'get' %>
 
 <p><b>Log Out:</b></p>
 <%= button_to "👋 Logout", '/logout', method: :delete %>
+<body>
+</body>
