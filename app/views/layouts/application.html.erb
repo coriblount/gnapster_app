@@ -12,14 +12,23 @@
   <body>
 <br>
 <br>
+<% if @current_user %> 
+  <br>
+  <br>
 <div class="menu">
-<% if @current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  Signed in as <%= current_user.name %> 
 <% else %>
-<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Logout', '/logout' %>
 <% end %>
 </div>
  
+<footer>
+<% unless root_path? %>
+<%= link_to "Back", :back, :class => "navbar-brand" %>
+<% end %>
+
+</footer>
     <%= yield %>
   </body>
+ 
 </html>
