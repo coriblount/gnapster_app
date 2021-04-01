@@ -24,7 +24,7 @@
 
 <!-- * User can delete playlist -->
 
-* Add Faker Gem Data
+<!-- * Add Faker Gem Data -->
 
 * Password confirmation for editing profile
 

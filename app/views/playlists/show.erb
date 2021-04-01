@@ -4,7 +4,6 @@ table {
   width:100%;
 }
 table, th, td {
-  border: 1px solid black;
   border-collapse: collapse;
 }
 th, td {
@@ -19,7 +18,7 @@ th, td {
 }
 #t01 th {
   background-color: rgba(98, 120, 255, 0.5);;
-  color: white;
+  color: black;
 }
 </style>
 </head>
@@ -34,11 +33,11 @@ th, td {
 <br>
 <table id="t01">
   <tr>
-    <th><%= link_to "Song", sort: "name" %></th>
-    <th><%= link_to "Album", sort: "album" %></th>               
-    <th><%= link_to "Artist", sort: "artist" %></th>                      
-    <th><%= link_to "Length", sort: "length" %></th>
-    <th><%= link_to "Avg. Rating", sort: "avg_rating" %></th>
+    <th><%= "Song"%></th>
+    <th><%= "Album"%></th>               
+    <th><%= "Artist"%></th>                      
+    <th><%= "Length"%></th>
+    <th><%= "Avg. User Rating"%></th>
     <th><%= "" %></th>
   </tr>
  <% @playlist.playlist_queues.map do |pq| %>
@@ -46,8 +45,8 @@ th, td {
     <td><%= pq.song.name%></td>
     <td><%= pq.album.name%></td>
     <td><%= pq.artist.name%></td>        
-    <td><%= "#{pq.song.length.to_f/60} min" %></td>
-    <td><%= pq.artist.rating %></td>
+    <td><%= pq.song_length %></td>
+    <td><%= pq.song_rating %></td>
     <td><%=button_to "Delete", pq, method: 'delete' %></td>      
   </tr>
   <% end %>

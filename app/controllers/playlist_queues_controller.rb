@@ -22,14 +22,6 @@ class PlaylistQueuesController < ApplicationController
         redirect_to @playlist_queue.playlist.user
     end
 
-    def update
-
-    end
-
-    def edit
-
-    end
-
     def destroy
         @playlist_queue = PlaylistQueue.find(params[:id])
         @playlist_queue.delete
