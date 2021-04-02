@@ -1,53 +1,27 @@
 # README
-# GNAPSTERAPP
 
+# Gnapster - Music Playlist App
 
-# Deliverables --  MVP
+    # Purpose : The primary purpose of this app is to demonstrate how to create a music playlist using ONLY Ruby on Rails, HTML and CSS.  The project required that we create a minimum of five models and twenty methods to demonstrate a good understanding of Rails CRUD, MVC & RESTful conventions.
 
-<!-- * User can sign/out -->
+# Deliverables
 
-<!-- * User can create new profile -->
+* User can Create New Account or Sign-in
+    * Upload a profile picture
+    * Edit their credentials
+    * Delete thier account
 
-<!-- * CRUD username/password -->
+* User has access to User Dashboard
 
-<!-- * User can Add Songs to their Playlist -->
+* User can Create New Playlist
+    * Add/Remove Songs from playlist
+    * Add/Remove Playlists from User Dashboard
 
-<!-- * User can remove songs from Playlist -->
+* User can see songs displayed by ratings
 
-<!-- * User can create new playlist -->
-
-* User can rate albums/songs - ****Stretch
-
-* User can play songs - ****Stretch
+* User can see Playlists by Avg. Ratings of the songs within the playlist
 
 * User can see most listened to songs - Analytics
 
-<!-- * User can delete playlist -->
-
-<!-- * Add Faker Gem Data -->
-
-* Password confirmation for editing profile
-
-### Create New PLaylist & Add Songs
-
-User creates new playlist '/playlists/new'
-    #route to 'playlist_queues/new'
-        #user selects playlist they want to save song to
-        #gives list of all songs through collection_select  ****(possibly add search field for artist, then diplay songs)
-        #user selects song
-        #user submits selection
-    #redirect_to @playlist
-
-### Advanced - Create New Playlist + Song
-
-#User creates new playlist '/playlists/new'
-    #route to page that asks how they want to select 1st song - custom route? 'playlist_queues/first_selection'
-        #gives list of all artists to choose from
-        #artist#show - displays all songs and allows selction with "save" button
-    #save button stores song data and reroutes to '/playlist_queues/new'
-        #form gets auto-populated with song selected on previous page
-        #user selects playlist they want to save song to
-        #user submits selection
-    #redirect_to @playlist
 
 
