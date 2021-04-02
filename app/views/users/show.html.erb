@@ -32,6 +32,10 @@ th, td {
   background-color: rgba(98, 120, 255, 0.75);
   color: white;
 }
+
+
+
+
 </style>
 </head>
 
@@ -64,6 +68,8 @@ th, td {
 <br>
 <br>
 
+
+<div id="main">
 <h3>User Shortcuts:</h3>
 <p><b>Create a new playlist below:</b></p>
 <%= button_to "🎧 Create New Playlist", '/playlists/new', method: 'get' %>
@@ -73,5 +79,7 @@ th, td {
 
 <p><b>Log Out:</b></p>
 <%= button_to "👋 Logout",'/logout', method: :delete %>
+
+</div>
 <body>
 </body>

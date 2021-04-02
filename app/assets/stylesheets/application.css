@@ -16,5 +16,15 @@
  h1 {
     text-align: center;
  }
+ body, html {
+   height: 100%;
+ }
 
- 
+
+ .bg { 
+ background-color: black;       
+ height: 100%;     
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover; 
+ text-align: center;    }        
