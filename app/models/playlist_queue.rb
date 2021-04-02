@@ -4,13 +4,30 @@ class PlaylistQueue < ApplicationRecord
     belongs_to :song
     belongs_to :playlist
 
-
-    # def playlist_attributes=(playlist)
-    #     self.playlist = Playlist.find_or_create_by(name: playlist[:name])
-    #     self.playlist.update(playlist)
-    # end
     def current_user_playlists
         self.find_by(user_id: session[:id])
     end
 
+    def song_length
+        seconds = self.song.length
+        minutes, seconds = seconds.divmod(60)
+        "#{minutes} min #{seconds} s."
+    end
+
+    def song_rating
+        if self.song.rating >= 5
+            "⭐ ⭐ ⭐ ⭐ ⭐"
+        elsif self.song.rating >= 4
+            "⭐ ⭐ ⭐ ⭐"
+        elsif self.song.rating >= 3
+            "⭐ ⭐ ⭐"
+        elsif self.song.rating >= 2
+            "⭐ ⭐"
+        elsif self.song.rating >= 1
+            "⭐"
+        elsif self.song.rating < 1
+            "☹"
+        end
+    end
+    
 end

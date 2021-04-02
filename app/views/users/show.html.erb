@@ -15,7 +15,6 @@ table {
   width:100%;
 }
 table, th, td {
- 
   border-collapse: collapse;
 }
 th, td {
@@ -30,7 +29,7 @@ th, td {
 }
 #t01 th {
   background-color: rgba(98, 120, 255, 0.75);
-  color: white;
+  color: black;
 }
 
 
@@ -58,8 +57,8 @@ th, td {
   <tr>
     <td><b><%= link_to playlist.name, playlist %></b></td>
     <td><%= playlist.playlist_track_count %></td>
-    <td><%= 100 %></td>        
-    <td><%= "⭐⭐⭐⭐" %></td>
+    <td><%= rand(1...999) %></td>        
+    <td><%= playlist.playlist_avg_rating %></td>
     <td><%=button_to "🎵 Add Song", '/playlist_queues/new', method: 'get' %></td>
     <td><%=button_to "❌ Delete Playlist", playlist, method: 'delete' %></td>      
   </tr>
